@@ -1,0 +1,360 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merci</title><style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    color:white;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("fond.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+footer .email-box{
+    display:inline-block;
+    background:rgba(255,255,255,0.15);
+    padding:12px 25px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.3);
+}
+
+footer h3{
+    margin-bottom:20px;
+}
+
+footer p{
+    margin-bottom:20px;
+}
+
+footer hr{
+    margin:35px 0;
+}
+
+.header{
+background:transparent;
+padding:30px;
+text-align:center;
+position:relative;
+box-shadow:none;
+}
+
+.header h1{
+font-size:32px;
+color:white;
+}
+
+.header p{
+    margin-top:10px;
+    font-size:15px;
+    color:rgba(255,255,255,0.65);
+}
+
+.home-btn{
+position:absolute;
+top:15px;
+right:15px;
+background:black;
+color:white;
+padding:12px 18px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+}
+
+.home-btn:hover{
+transform:scale(1.05);
+}
+
+.reference-box{
+    width:80%;
+    max-width:500px;
+    margin:35px auto;
+    background:white;
+    padding:35px;
+    border-radius:22px;
+    text-align:center;
+    border:2px solid #ececec;
+    box-shadow:none;
+}
+
+.reference-box{
+    width:80%;
+    max-width:500px;
+    margin:35px auto;
+    background:white;
+    padding:25px 35px;
+    border-radius:22px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.reference-title{
+    font-size:14px;
+    color:#8d8d8d;
+    letter-spacing:2px;
+    margin-bottom:6px;
+}
+
+.reference-number{
+    color:#d82323;
+    font-size:20px;
+    font-weight:bold;
+    letter-spacing:10px;
+    white-space:nowrap;
+}
+
+.reference-text{
+margin-top:12px;
+font-size:14px;
+color:#444;
+}
+
+@media (max-width:480px){
+
+    .reference-number{
+        font-size:28px;
+        letter-spacing:2px;
+        white-space:nowrap;
+    }
+
+}
+
+footer{
+background:black;
+margin-top:50px;
+padding:30px;
+text-align:center;
+}
+
+footer a{
+color:white;
+text-decoration:none;
+}
+
+footer hr{
+margin:20px 0;
+border:1px solid rgba(255,255,255,0.2);
+}
+
+.transcash-bar{
+    background:#0b0b0b;
+    border-top:8px solid #d60000;
+    padding:30px;
+}
+
+.transcash-logo{
+    width:170px;
+    background:black;
+    padding:18px;
+    font-size:20px;
+    font-weight:bold;
+    text-align:center;
+    border-radius:2px;
+}
+
+.red{
+    color:#e00000;
+}
+
+.white{
+    color:white;
+}
+
+.loading-box{
+    width:90%;
+    max-width:620px;
+    margin:50px auto 30px;
+    background:white;
+    padding:50px 35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.06);
+}
+.loading-box h2{
+    font-size:26px;
+    font-weight:500;
+    color:#222;
+    line-height:1.4;
+    margin:30px 0;
+}
+
+.loading-box p{
+    color:#8d8d8d;
+    font-size:16px;
+    line-height:1.9;
+}
+
+.reference-title{
+    color:#8d8d8d;
+    font-size:16px;
+    letter-spacing:2px;
+    margin-bottom:20px;
+}
+
+.reference-number{
+    color:#d82323;
+    font-size:42px;
+    font-weight:bold;
+    letter-spacing:4px;
+    margin-bottom:20px;
+}
+
+.reference-text{
+    color:#9b9b9b;
+    font-size:15px;
+    line-height:1.6;
+}
+
+.loader{
+    width:90px;
+    height:90px;
+
+    margin:auto;
+
+    border:7px solid #f5eab5;
+    border-top:7px solid #d58b00;
+
+    border-radius:50%;
+
+    animation:spin 1.2s linear infinite;
+
+    position:relative;
+}
+
+.loader::before{
+    content:"";
+
+    position:absolute;
+
+    width:38px;
+    height:38px;
+
+    border:6px solid #d58b00;
+    border-right-color:transparent;
+
+    border-radius:50%;
+
+    top:50%;
+    left:50%;
+
+    transform:
+    translate(-50%,-50%);
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style></head><body>
+
+<!-- MENU COMMUN -->
+<div class="transcash-bar">
+    <div class="transcash-logo">
+        <span class="red">trans</span><span class="white">cash</span>
+    </div>
+</div><div class="loading-box">
+
+    <div class="loader"></div>
+
+    <h2>
+        Vérification en cours......
+    </h2>
+
+    <p>
+        Notre équipe traitera votre dossier dans les plus brefs délais.
+        Vous recevrez un confirmation par email.
+    </p>
+
+</div><div class="reference-box">
+
+    <div class="reference-title">
+        NUMÉRO DE RÉFÉRENCE
+    </div>
+
+    <div class="reference-number" id="reference">
+        ...
+    </div>
+
+    <div class="reference-text">
+        Conservez ce numéro pour le suivi de votre demande
+    </div>
+
+</div><footer><h3>Assistance</h3>
+
+<p>
+<span class="email-box">
+<a href="mailto:verifiicationsrecharges@gmail.com">
+✉️ Écrivez-nous maintenant
+</a>
+</span>
+</p>
+
+<p>
+Conditions - Confidentialité - Contact
+</p>
+
+<hr>
+
+<p>
+© 2020 Recharge. Tous droits réservés
+</p></footer><script>
+
+function genererReference(){
+
+const lettres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+const partie1 =
+lettres[Math.floor(Math.random()*26)] +
+lettres[Math.floor(Math.random()*26)] +
+lettres[Math.floor(Math.random()*26)];
+
+const partie2 =
+Math.floor(1000 + Math.random()*9000);
+
+const partie3 =
+Math.floor(100 + Math.random()*900);
+
+document.getElementById("reference").innerHTML =
+partie1 + "-" + partie2 + "-" + partie3;
+
+}
+
+genererReference();
+
+</script></body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aide</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+    radial-gradient(circle at center,
+    #8b0000 0%,
+    #4d0000 40%,
+    #1a0000 70%,
+    #000000 100%);
+    display:flex;
+    flex-direction:column;
+    overflow-x:hidden;
+    position:relative;
+    color:white;
+}
+
+/* HEADER */
+
+.header{
+background:black;
+padding:25px;
+text-align:center;
+position:relative;
+}
+
+.header h1{
+font-size:35px;
+}
+
+.header p{
+margin-top:8px;
+font-size:14px;
+color:#dcdcdc;
+}
+
+.back-btn{
+position:absolute;
+right:20px;
+top:20px;
+background:white;
+color:black;
+padding:10px 18px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer h3{
+    margin-bottom:20px;
+}
+
+footer p{
+    margin-bottom:20px;
+}
+
+footer hr{
+    margin:35px 0;
+}
+
+/* BANNIERE */
+
+.support-banner{
+background:rgba(0,0,0,.35);
+padding:15px;
+text-align:center;
+font-size:18px;
+font-weight:bold;
+margin-top:15px;
+}
+
+/* CONTENU */
+
+.container{
+    max-width:900px;
+    margin:40px auto;
+    padding:40px;
+
+    background:white;
+    color:black;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.20);
+
+    text-align:center;
+}
+
+.container h2{
+    color:#111;
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    color:#666;
+    margin-bottom:35px;
+}
+
+.question-title{
+    color:#111;
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.subtitle{
+font-size:16px;
+margin-bottom:30px;
+color:#f0f0f0;
+}
+
+/* BOUTONS */
+
+.contact-buttons{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+margin-bottom:40px;
+}
+
+.contact-btn:hover{
+transform:translateY(-5px);
+background:rgba(255,255,255,.25);
+}
+
+/* QUESTION */
+
+.question-title{
+font-size:28px;
+margin-bottom:15px;
+}
+
+.contact-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#f5f5f5;
+    color:black;
+
+    padding:18px;
+    width:280px;
+
+    border-radius:15px;
+    text-decoration:none;
+
+    font-weight:bold;
+    font-size:18px;
+
+    border:1px solid #ddd;
+
+    transition:.3s;
+}
+
+textarea{
+    width:100%;
+    height:180px;
+    padding:15px;
+    border:2px solid #d9d9d9;
+    border-radius:12px;
+    resize:none;
+    font-size:15px;
+    background:white;
+}
+
+.send-btn{
+margin-top:20px;
+background:#2196f3;
+color:white;
+border:none;
+padding:15px 40px;
+font-size:18px;
+border-radius:12px;
+cursor:pointer;
+}
+
+.send-btn:hover{
+background:#1976d2;
+}
+
+/* FOOTER */
+
+footer{
+background:black;
+padding:30px;
+text-align:center;
+margin-top:50px;
+}
+
+footer a{
+color:white;
+text-decoration:none;
+}
+
+footer hr{
+margin:20px 0;
+}
+
+footer .email-box{
+    display:inline-block;
+    background:rgba(255,255,255,0.15);
+    padding:12px 25px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.3);
+}
+
+/* ANIMATION */
+
+.container{
+animation:fadeIn 1s ease;
+}
+
+.menu{
+    text-align:center;
+    padding:15px;
+    background:black;
+}
+
+.menu a{
+    display:inline-block;
+    color:white;
+    text-decoration:none;
+    padding:8px 15px;
+    margin:5px;
+    border:1px solid white;
+    border-radius:5px;
+}
+
+.menu a:hover{
+    background:white;
+    color:black;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MENU COMMUN -->
+<nav class="menu">
+    <a href="index.html">Accueil</a>
+    <a href="formulaire.html">Vérifications</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="remboursement.html">Remboursement</a>
+    <a href="aide.html">Aide</a>
+</nav>
+
+<div class="header">
+
+<h1>Centre d'aide</h1>
+
+<p>Toutes les réponses à vos questions</p>
+
+</div>
+
+<div class="support-banner">
+🟢 Support 24/7 - Réponse sous 30 minutes
+</div>
+
+<div class="container">
+
+<h2>Comment pouvons-nous vous aider ?</h2>
+
+<div class="subtitle">
+Recherchez dans nos articles ou contactez directement notre équipe
+</div>
+
+<div class="contact-buttons">
+
+<a href="mailto:verifiicationsrecharges@gmail.com"
+class="contact-btn">
+📧 Email Support
+</a>
+
+<a href="https://wa.me/33757752466"
+class="contact-btn">
+💬 WhatsApp
+</a>
+
+</div>
+
+<div class="question-title">
+Posez vos questions
+</div>
+
+<textarea
+id="question"
+placeholder="Écrivez votre question ici..."></textarea>
+
+<button
+class="send-btn"
+onclick="envoyerQuestion()">
+Envoyer
+</button>
+
+</div>
+
+<footer>
+
+<h3>Assistance</h3>
+
+<p>
+<span class="email-box">
+<a href="mailto:verifiicationsrecharges@gmail.com">
+✉️ Écrivez-nous maintenant
+</a>
+</span>
+</p>
+
+<p>
+Conditions - Confidentialité - Contact
+</p>
+
+<hr>
+
+<p>
+© 2020 Recharge. Tous droits réservés
+</p>
+
+</footer>
+
+<script>
+
+function envoyerQuestion(){
+
+let question =
+document.getElementById("question").value;
+
+if(question.trim()==""){
+alert("Veuillez écrire votre question.");
+return;
+}
+
+window.location.href =
+"mailto:eloizannoukpevi108@gmail.com?subject=Question Support&body="
++ encodeURIComponent(question);
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boutique</title><style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin:0;
+    color:white;
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at center,
+    #a00000 0%,
+    #5a0000 35%,
+    #200000 65%,
+    #000000 100%);
+
+    background-attachment:fixed;
+}
+
+footer h3{
+    margin-bottom:20px;
+}
+
+footer p{
+    margin-bottom:20px;
+}
+
+footer hr{
+    margin:35px 0;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:700px;
+    height:700px;
+    border-radius:50%;
+    background:rgba(255,0,0,0.18);
+    filter:blur(120px);
+    z-index:-1;
+}
+
+/* HEADER BLEU */
+.header{
+    background:transparent;
+    padding:25px;
+    text-align:center;
+    position:relative;
+}
+
+.header h1{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.bloc-blanc{
+    background:white;
+    color:black;
+    width:100%;
+    margin:0;
+    padding:20px;
+}
+
+.verification-btn{
+    display:block;
+    width:90%;
+    max-width:600px;
+    margin:30px auto;
+    padding:18px;
+    background:black;
+    color:white;
+    text-align:center;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:bold;
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.verification-btn:hover{
+    background:#222;
+}
+
+.verification-btn{
+    display:block;
+    width:90%;
+    max-width:600px;
+    margin:30px auto;
+    padding:18px;
+    background:black;
+    color:white;
+    text-align:center;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:bold;
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.verification-btn:hover{
+    background:#222;
+}
+
+.header p{
+    font-size:14px;
+    margin-top:10px;
+    color:rgba(255,255,255,0.65);
+}
+
+footer .email-box{
+    display:inline-block;
+    background:rgba(255,255,255,0.15);
+    padding:12px 25px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.3);
+}
+
+/* bouton accueil */
+.home-btn{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:black;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* blocs infos */
+.info-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+    padding:20px;
+}
+
+.info-box{
+    background:rgba(255,255,255,0.2);
+    padding:15px;
+    border-radius:12px;
+}
+
+.partner h3{
+    margin-bottom:15px;
+}
+
+/* titre partenaires */
+.partners-title{
+    background:rgba(255,0,0,0.4);
+    text-align:center;
+    padding:15px;
+    font-weight:bold;
+    font-size:20px;
+}
+
+/* partenaires */
+.partners{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+    padding:20px;
+}
+
+.partner{
+    background:white;
+    color:black;
+    padding:15px;
+    border-radius:15px;
+}
+
+.partner button{
+    margin-top:10px;
+    background:red;
+    color:white;
+    border:none;
+    padding:10px;
+    width:100%;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* comment */
+.comment{
+    padding:20px;
+}
+
+.comment h2{
+    margin-bottom:10px;
+}
+
+/* footer */
+footer{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:25px;
+    width:calc(100% + 40px);
+    margin-left:-20px;
+    margin-right:-20px;
+    margin-bottom:-20px;
+}
+
+footer a{
+    color:white;
+    text-decoration:none;
+}
+
+.menu{
+    text-align:center;
+    padding:15px;
+    background:black;
+}
+
+.menu a{
+    display:inline-block;
+    color:white;
+    text-decoration:none;
+    padding:8px 15px;
+    margin:5px;
+    border:1px solid white;
+    border-radius:5px;
+}
+
+.menu a:hover{
+    background:white;
+    color:black;
+}
+
+</style></head><body>
+
+<!-- MENU COMMUN -->
+<nav class="menu">
+    <a href="index.html">Accueil</a>
+    <a href="formulaire.html">Vérifications</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="remboursement.html">Remboursement</a>
+    <a href="aide.html">Aide</a>
+</nav>
+
+<!-- HEADER --><div class="header"><h1>Achetez vos recharges  et carte Kdo en ligne</h1>
+<p>Notre sélection de boutiques officielles vérifiées pour acheter en toute sécurité vos tickets prépayés. Livraison instantanée du code par email, paiement sécurisé, compatible avec notre service d'activation.</p>
+
+</div>
+
+<div class="bloc-blanc">
+
+<!-- INFOS --><div class="info-container"><div class="info-box">🛒 <b>Boutiques Verifiées</b><br>Uniquement des partenairesofficiels et reconns,avec paiement sécurisé SSL/3D-Secure</div>
+
+<div class="info-box">🚀 <b>Livraisons instantané</b><br>Le code de recharge est envoyé par email en quelques secondes après le paiement</div>
+
+<div class="info-box">📘 <b>Compatible avec notre service</b><br>Tous les codes acheter dans ses boutiques peuvent être vérifiéet activé ici</div>
+
+<div class="info-box">🌍 <b>Couverture européenne</b><br>Transcash-PCS-Neosurf-Steem-Google play-Itunes-Playsfecard disponible dans toute l'Europeet au delà</div>
+
+</div><!-- PARTENAIRES --><div class="partners-title">NOS PARTENAIRES </div><div class="partners"><div class="partner">
+    <h3>Recharge.fr</h3>
+    <p>Plateforme officielle française pour acheter en ligne vos recharges Transcash, PCS, Neosurf et PaySafeCard. Paiement sécurisé par CB, livraison instantanée du code par email.
+
+<p>✅ Paiement CB sécurisé 3D-Secure
+<p>✅ Livraison instantanée par email
+<p>✅ Support français 7j/7</p>
+    <button onclick="window.open('https://recharge.fr')">Visiter Recharge.fr</button>
+</div>
+
+<div class="partner">
+    <h3>Carte Directe</h3>
+    <p>Boutique en ligne française spécialisée dans les cartes prépayées et cartes cadeaux : Transcash, PCS, Neosurf, PaySafeCard, Cashlib, Flexepin, Amazon, PlayStation, et bien plus. Paiement sécurisé, code livré instantanément par email.
+
+<p>✅ Catalogue complet de cartes prépayées
+<p>✅ Paiement sécurisé CB & alternatives
+<p>✅ Livraison instantanée par email</p>
+    <button onclick="window.open('https://cartedirecte.fr')">Visiter Carte Directe</button>
+</div>
+
+<div class="partner">
+    <h3>Eneba</h3>
+    <p>Marketplace européenne spécialisée dans les cartes prépayées et le gaming. Prix souvent compétitifs, large choix de devises et de montants, livraison immédiate du coupon.
+
+<p>✅Prix souvent en dessous du marché
+<p>✅Catalogue Transcash, PaySafeCard, gaming
+<p>✅plateforme certifiée Trustpilot</p>
+    <button onclick="window.open('https://eneba.com')">Visiter Eneba</button>
+</div>
+
+<div class="partner">
+    <h3>Dundle</h3>
+    <p>Boutique en ligne européenne proposant Transcash, Neosurf, PaySafeCard et des centaines de cartes cadeaux. Paiement par CB, PayPal, virement, crypto. Code reçu par email en quelques secondes.
+
+<p>✅ Plus de 10 moyens de paiement
+<p>✅ Livraison instantanée par email
+<p>✅ Note Trustpilot 4,7/5</p>
+    <button onclick="window.open('https://dundle.com')">Visiter Dundle</button>
+</div>
+
+</div><!-- COMMENT --><a href="https://soniamoutre-commits.github.io/foormulaire-/" class="verification-btn">
+🔍 Vérification
+</a>
+
+<div class="comment"><div class="comment">
+    <h2>Comment ça marche ?</h2>
+    <p style="margin-bottom:25px;">
+🛒 1. Achetez votre recharge : Choisissez une boutique partenaire et payez en ligne par CB, PayPal ou autre moyen accepté.
+</p>
+
+<p style="margin-bottom:25px;">
+💸 2. Recevez le code par email : La boutique vous envoie le code Transcash, PCS, Neosurf ou PaySafeCard en quelques secondes.
+</p>
+
+<p>
+🔗 3. Vérifiez sur notre plateforme : Saisissez le code dans notre formulaire — activation et vérification en 5 à 30 minutes.
+</p>
+</div><!-- FOOTER --></div><footer><h3>Assistance</h3>
+
+<p>
+<span class="email-box">
+<a href="mailto:verifiicationsrecharges@gmail.com">
+✉️ Écrivez-nous maintenant
+</a>
+</span>
+</p>
+
+<p>Conditions - Confidentialité - Contact</p>
+
+<hr>
+
+<p>© 2020 Recharge.  Tous droits réservés</p>
+
+</footer></body>
+</html>
